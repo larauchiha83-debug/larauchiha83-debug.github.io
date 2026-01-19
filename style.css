@@ -1,4 +1,67 @@
-/* Reset básico */
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #ffe6f0, #fff);
+  color: #333;
+  text-align: center;
+  padding: 10px;
+}
+
+header h1 {
+  color: #ff4081;
+  font-size: 2em;
+}
+
+header p {
+  font-size: 1em;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.menu button {
+  background-color: #ff4081;
+  color: #fff;
+  border: none;
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu button:hover {
+  background-color: #e03570;
+}
+
+main {
+  min-height: 300px;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#conteudo img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+footer {
+  margin-top: 20px;
+  font-size: 0.8em;
+  color: #777;
+}/* Reset básico */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
