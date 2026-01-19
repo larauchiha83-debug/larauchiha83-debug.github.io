@@ -347,3 +347,6 @@ function updateCoverSelect() {
     let select = document.getElementById('coverSelect');
 
 select.innerHTML = '<option value="">Selecionar Capa</
+    document.getElementById("meuBotao").addEventListener("click", function() {
+  alert("Botão funcionando!");
+});
