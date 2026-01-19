@@ -1,4 +1,21 @@
-let ctx = document.getElementById('canvas').getContext('2d');
+// Função para mostrar mensagem
+function mostrarMensagem(texto) {
+  const div = document.getElementById("mensagem");
+  div.textContent = texto;
+}
+
+// Eventos dos botões
+document.getElementById("botao1").addEventListener("click", function() {
+  mostrarMensagem("Você clicou no Botão 1!");
+});
+
+document.getElementById("botao2").addEventListener("click", function() {
+  mostrarMensagem("Você clicou no Botão 2!");
+});
+
+document.getElementById("botao3").addEventListener("click", function() {
+  mostrarMensagem("Você clicou no Botão 3!");
+});let ctx = document.getElementById('canvas').getContext('2d');
 
 let coverCtx = document.getElementById('coverCanvas').getContext('2d');
 
