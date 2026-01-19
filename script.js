@@ -1,9 +1,6 @@
 const conteudo = document.getElementById("conteudo");
 let produtos = [];
 
-// --- Home ---
-function mostrarHome() {
-  conteudo.innerHTML = "<p>Bem-vindo ao KpopMafia! Clique nos botões acima para explorar.</p>";
 }
 
 // --- IA Estilo Chat ---
@@ -135,11 +132,7 @@ div.innerHTML=`
 `;  const motivo = prompt("Motivo da denúncia (ex: conteúdo impróprio, spam, ofensivo):");
   if(motivo) alert("Sua denúncia foi registrada. Obrigado!");
 });const conteudo = document.getElementById("conteudo");
-let produtos = [];
-
-// --- Home ---
-function mostrarHome() {
-  conteudo.innerHTML = "<p>Bem-vindo ao KpopMafia! Clique nos botões acima para explorar.</p>";
+let produtos = [
 }
 
 // --- IA Estilo Chat ---
@@ -279,11 +272,7 @@ document.getElementById("marketBtn").addEventListener("click", mostrarMarketplac
     chatBox.appendChild(msg);
     chatBox.scrollTop = chatBox.scrollHeight;
   }
-}const conteudo = document.getElementById("conteudo");
-
-// --- Função Home ---
-function mostrarHome() {
-  conteudo.innerHTML = "<p>Bem-vindo ao KpopMafia! Clique nos botões acima para explorar.</p>";
+}const conteudo = document.getElementById("conteudo")
 }
 
 // --- IA de escrita ---
@@ -375,9 +364,6 @@ document.getElementById("homeBtn").addEventListener("click", mostrarHome);
 document.getElementById("aiBtn").addEventListener("click", mostrarIA);
 document.getElementById("marketBtn").addEventListener("click", mostrarMarketplace);const conteudo = document.getElementById("conteudo");
 
-// --- Função Home ---
-function mostrarHome() {
-  conteudo.innerHTML = "<p>Bem-vindo ao KpopMafia! Clique nos botões acima para explorar.</p>";
 }
 
 // --- Seções ---
@@ -385,9 +371,9 @@ function mostrarCapas() {
   conteudo.innerHTML = `
     <h2>Capas</h2>
     <div class="grupos">
-      <img src="https://via.placeholder.com/50x50?text=BTS" alt="BTS" class="logoGrupo">
-      <img src="https://via.placeholder.com/50x50?text=TXT" alt="TXT" class="logoGrupo">
-      <img src="https://via.placeholder.com/50x50?text=Seventeen" alt="Seventeen" class="logoGrupo">
+      <img src="https://via.placeholder.com/50x50?text=BTS" alt="BTS" class="logoGrupo">https://share.google/JUQEysjy0EYcM14bR
+      <img src="https://via.placeholder.com/50x50?text=TXT" alt="TXT" class="logoGrupo">https://share.google/tmZi38PHYOKpAIGew
+      <img src="https://via.placeholder.com/50x50?text=Seventeen" alt="Seventeen" class="logoGrupo">https://share.google/ou5z39Unefa2E8VrV
     </div>
     <img src="https://via.placeholder.com/300x150?text=Capa+1" alt="Capa 1">
     <img src="https://via.placeholder.com/300x150?text=Capa+2" alt="Capa 2">
@@ -541,9 +527,7 @@ document.getElementById("revisarBtn").addEventListener("click", function() {
   saida.textContent = "Sugestão: revise pontuação, estrutura e fluidez das frases.";
 });const conteudo = document.getElementById("conteudo");
 
-// Função para resetar a área de conteúdo
-function mostrarHome() {
-  conteudo.innerHTML = "<p>Bem-vindo ao Kpopmafia! Clique nos botões acima para navegar.</p>";
+
 }
 
 // Funções para cada seção
