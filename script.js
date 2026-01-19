@@ -1,4 +1,13 @@
-const conteudo = document.getElementById("conteudo");
+div.querySelector(".denunciarBtn").addEventListener("click", ()=>{
+div.innerHTML=`
+  <h4>${p.nome} - R$ ${p.preco}</h4>
+  <img src="${p.foto}" alt="${p.nome}">
+  <p>${p.desc}</p>
+  ${p.video?`<a href="${p.video}" target="_blank">Ver vídeo</a>`:""}
+  <button class="denunciarBtn">Denunciar</button>
+`;  const motivo = prompt("Motivo da denúncia (ex: conteúdo impróprio, spam, ofensivo):");
+  if(motivo) alert("Sua denúncia foi registrada. Obrigado!");
+});const conteudo = document.getElementById("conteudo");
 let produtos = [];
 
 // --- Home ---
