@@ -1,4 +1,100 @@
+const conteudo = document.getElementById("conteudo");
+let produtos = [];
+
+// --- Home ---
+function mostrarHome() {
+  conteudo.innerHTML = "<p>Bem-vindo ao KpopMafia! Clique nos botões acima para explorar.</p>";
+}
+
+// --- IA Estilo Chat ---
 function mostrarIA() {
+  conteudo.innerHTML = `
+    <h2>IA de Escrita ✨</h2>
+    <div id="chatBox"></div>
+    <textarea id="chatInput" placeholder="Escreva sua história ou ideia aqui..." rows="3"></textarea>
+    <select id="tipoSugestao">
+      <option value="resumo">Resumo</option>
+      <option value="sinopse">Sinopse</option>
+      <option value="opiniao">Opinião</option>
+      <option value="ideias">Ideias Criativas</option>
+    </select>
+    <button id="enviarChat">Enviar</button>
+  `;
+
+  const chatBox = document.getElementById("chatBox");
+
+  document.getElementById("enviarChat").addEventListener("click", () => {
+    const texto = document.getElementById("chatInput").value.trim();
+    const tipo = document.getElementById("tipoSugestao").value;
+    if (!texto) return;
+
+    adicionarMensagem("user", texto);
+
+    let resposta = "";
+    if (tipo === "resumo") resposta = "✨ Resumo sugerido: foque nos eventos principais e no conflito central.";
+    if (tipo === "sinopse") resposta = "📖 Sinopse: apresente o universo, o gancho emocional e o mistério.";
+    if (tipo === "opiniao") resposta = "💬 Opinião: a ideia é boa, pode aprofundar emoções e motivações.";
+    if (tipo === "ideias") resposta = "🌙 Ideias: explore relações, tensão emocional ou reviravoltas.";
+
+    setTimeout(() => adicionarMensagem("bot", resposta), 500);
+    document.getElementById("chatInput").value = "";
+  });
+
+  function adicionarMensagem(tipo, texto) {
+    const msg = document.createElement("div");
+    msg.className = tipo === "user" ? "msgUser" : "msgBot";
+    msg.textContent = texto;
+    chatBox.appendChild(msg);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+}
+
+// --- Marketplace ---
+function mostrarMarketplace() {
+  conteudo.innerHTML = `
+    <h2>Marketplace KpopMafia</h2>
+    <h3>Vender Produto</h3>
+    <input type="text" id="nomeProduto" placeholder="Nome do produto">
+    <input type="text" id="precoProduto" placeholder="Preço">
+    <textarea id="descricaoProduto" placeholder="Descrição do produto"></textarea>
+    <input type="text" id="fotoProduto" placeholder="URL da foto">
+    <input type="text" id="videoProduto" placeholder="URL do vídeo (opcional)">
+    <button id="enviarProduto">Adicionar à Vitrine</button>
+    <h3>Vitrine</h3>
+    <div id="vitrine"></div>
+  `;
+
+  document.getElementById("enviarProduto").addEventListener("click", () => {
+    const nome = document.getElementById("nomeProduto").value.trim();
+    const preco = document.getElementById("precoProduto").value.trim();
+    const desc = document.getElementById("descricaoProduto").value.trim();
+    const foto = document.getElementById("fotoProduto").value.trim();
+    const video = document.getElementById("videoProduto").value.trim();
+    if(!nome||!preco||!desc||!foto){ alert("Preencha todos os campos obrigatórios!"); return; }
+
+    produtos.push({nome,preco,desc,foto,video});
+    atualizarVitrine();
+  });
+}
+
+function atualizarVitrine(){
+  const vitrine = document.getElementById("vitrine");
+  vitrine.innerHTML = "";
+  produtos.forEach(p=>{
+    const div=document.createElement("div");
+    div.className="produto";
+    div.innerHTML=`<h4>${p.nome} - R$ ${p.preco}</h4>
+                   <img src="${p.foto}" alt="${p.nome}">
+                   <p>${p.desc}</p>
+                   ${p.video?`<a href="${p.video}" target="_blank">Ver vídeo</a>`:""}`;
+    vitrine.appendChild(div);
+  });
+}
+
+// --- Eventos do Menu ---
+document.getElementById("homeBtn").addEventListener("click", mostrarHome);
+document.getElementById("aiBtn").addEventListener("click", mostrarIA);
+document.getElementById("marketBtn").addEventListener("click", mostrarMarketplace);function mostrarIA() {
   conteudo.innerHTML = `
     <h2>IA de Escrita ✨</h2>
 
