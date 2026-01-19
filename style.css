@@ -1,4 +1,29 @@
-/* Reset */
+#chatBox {
+  background: #fff0f6;
+  border-radius: 15px;
+  padding: 10px;
+  max-height: 250px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.msgUser {
+  background: linear-gradient(45deg,#ff4081,#ff80ab);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 15px;
+  margin: 5px 0;
+  text-align: right;
+}
+
+.msgBot {
+  background: #ffffff;
+  padding: 8px 12px;
+  border-radius: 15px;
+  margin: 5px 0;
+  text-align: left;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}/* Reset */
 * { margin:0; padding:0; box-sizing:border-box; }
 
 body {
