@@ -1,4 +1,53 @@
-const conteudo = document.getElementById("conteudo");
+function mostrarIA() {
+  conteudo.innerHTML = `
+    <h2>IA de Escrita ✨</h2>
+
+    <div id="chatBox"></div>
+
+    <textarea id="chatInput" placeholder="Escreva sua história ou ideia aqui..." rows="3"></textarea>
+
+    <select id="tipoSugestao">
+      <option value="resumo">Resumo</option>
+      <option value="sinopse">Sinopse</option>
+      <option value="opiniao">Opinião</option>
+      <option value="ideias">Ideias Criativas</option>
+    </select>
+
+    <button id="enviarChat">Enviar</button>
+  `;
+
+  const chatBox = document.getElementById("chatBox");
+
+  document.getElementById("enviarChat").addEventListener("click", () => {
+    const texto = document.getElementById("chatInput").value.trim();
+    const tipo = document.getElementById("tipoSugestao").value;
+
+    if (!texto) return;
+
+    adicionarMensagem("user", texto);
+
+    let resposta = "";
+    if (tipo === "resumo")
+      resposta = "✨ Resumo sugerido: foque nos eventos principais e no conflito central.";
+    if (tipo === "sinopse")
+      resposta = "📖 Sinopse: apresente o universo, o gancho emocional e o mistério.";
+    if (tipo === "opiniao")
+      resposta = "💬 Opinião: a ideia é boa, pode aprofundar emoções e motivações.";
+    if (tipo === "ideias")
+      resposta = "🌙 Ideias: explore relações, tensão emocional ou reviravoltas.";
+
+    setTimeout(() => adicionarMensagem("bot", resposta), 500);
+    document.getElementById("chatInput").value = "";
+  });
+
+  function adicionarMensagem(tipo, texto) {
+    const msg = document.createElement("div");
+    msg.className = tipo === "user" ? "msgUser" : "msgBot";
+    msg.textContent = texto;
+    chatBox.appendChild(msg);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+}const conteudo = document.getElementById("conteudo");
 
 // --- Função Home ---
 function mostrarHome() {
