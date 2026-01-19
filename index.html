@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Site kpopmafia</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KPopMafia - Como Instagram + Wattpad</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>KPopMafia</h1>
+
+        <nav>
+
+            <button onclick="showSection('home')">🏠 Home</button>
+
+            <button onclick="showSection('post')">➕ Postar</button>
+
+            <button onclick="showSection('fanfics')">📖 Fanfics</button>
+
+            <button onclick="showSection('capas')">🎨 Capas</button>
+
+            <button onclick="showSection('reels')">🎥 Reels</button>
+
+            <button onclick="showSection('messages')">💬 Messages</button>
+
+            <button onclick="showSection('profile')">👤 Profile</button>
+
+        </nav>
+
+    </header>
+
+    
+
+    <main>
+
+        <section id="home" class="section">
+
+            <div id="stories"></div>
+
+            <div id="postFeed"></div>
+
+        </section>
+
+        
+
+        <section id="post" class="section hidden">
+
+            <h2>Postar Mídia</h2>
+
+            <select id="fandomFilter">
+
+                <option value="all">Todos</option>
+
+                <option value="BTS">BTS</option>
+
+                <option value="Blackpink">Blackpink</option>
+
+            </select>
+
+            <input type="file" id="upload" accept="image/*,video/*">
+
+            <input type="file" id="audioUpload" accept="audio/*">
+
+            <button onclick="addFrame()">Adicionar Moldura</button>
+
+            <input type="text" id="captionInput" placeholder="Legenda...">
+
+            <canvas id="canvas" width="300" height="300"></canvas>
+
+            <button onclick="postMedia()">Postar Mídia</button>
+
+        </section>
+
+        
+
+        <section id="fanfics" class="section hidden">
+
+            <h2>Fanfics - Estilo Wattpad</h2>
+
+            <button onclick="showFanficSection('list')">Ver Minhas Histórias</button>
+
+            <button onclick="showFanficSection('create')">Criar Nova História</button>
+
+            <div id="fanficList"></div>
+
+            <div id="fanficCreate" class="hidden">
+
+                <input type="text" id="storyTitle" placeholder="Título da História">
+
+                <textarea id="storyDesc" placeholder="Descrição..."></textarea>
+
+                <select id="coverSelect">
+
+                    <option value="">Selecionar Capa</option>
+
+                </select>
+
+                <button onclick="createStory()">Criar História</button>
+
+            </div>
+
+            <div id="fanficEdit" class="hidden">
+
+                <h3 id="currentStoryTitle"></h3>
+
+                <textarea id="chapterInput" placeholder="Escreva o capítulo..."></textarea>
+
+                <button onclick="insertMediaIntoChapter()">Inserir Mídia</button>
+
+                <button onclick="insertAudioIntoChapter()">Inserir Música</button>
+
+                <button onclick="correctChapter()" style="background: #ff69b4; color: white; padding: 10px; border-radius: 10px;">Corrigir Capítulo (IA)</button>
+
+                <button onclick="addChapter()">Adicionar Capítulo</button>
+
+                <div id="chaptersList"></div>
+
+                <div id="correctedChapter"></div>
+
+            </div>
+
+        </section>
+
+        
+
+        <section id="capas" class="section hidden">
+
+            <h2>Criar/Editar Capas</h2>
+
+            <canvas id="coverCanvas" width="300" height="400"></canvas>
+
+            <input type="text" id="textInput" placeholder="Texto para adicionar...">
+
+            <button onclick="addTextToCover()">Adicionar Texto</button>
+
+            <button onclick="addFrameToCover()">Adicionar Moldura</button>
+
+            <button onclick="insertImageToCover()">Inserir Imagem</button>
+
+            <button onclick="insertAudioToCover()">Inserir Música</button>
+
+            <button onclick="saveCover()">Salvar Capa</button>
+
+            <div id="savedCovers"></div>
+
+        </section>
+
+        
+
+        <section id="reels" class="section hidden">
+
+            <h2>Reels (Vídeos)</h2>
+
+            <div id="reelsFeed"></div>
+
+        </section>
+
+        
+
+        <section id="messages" class="section hidden">
+
+            <h2>Mensagens</h2>
+
+            <div id="chatList"></div>
+
+            <div id="chatWindow" class="hidden">
+
+                <div id="chatMessages"></div>
+
+                <input type="text" id="chatInput" placeholder="Digite...">
+
+                <button onclick="sendMessage()">Enviar</button>
+
+            </div>
+
+        </section>
+
+        
+
+        <section id="profile" class="section hidden">
+
+            <h2>Seu Perfil</h2>
+
+            <p>Bio: Fã de K-Pop! Seguidores: 100 | Seguindo: 50</p>
+
+            <div id="profileGrid"></div>
+
+        </section>
+
+    </main>
+
+    
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
