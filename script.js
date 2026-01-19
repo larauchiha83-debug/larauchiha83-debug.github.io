@@ -1,4 +1,33 @@
-div.querySelector(".denunciarBtn").addEventListener("click", ()=>{
+// Função para criar botão de denúncia em qualquer card ou item
+function adicionarBotaoDenuncia(container, itemNome) {
+  const btn = document.createElement("button");adicionarBotaoDenuncia(div, p.nome);
+  btn.textContent = "Denunciar";
+  btn.className = "denunciarBtn";
+
+  btn.addEventListener("click", () => {
+    const motivo = prompt(`Denúncia para "${itemNome}":\nEscolha o motivo (ex: conteúdo impróprio, spam, ofensivo)`);
+    if (!motivo) return;
+
+    const comentario = prompt("Comentário opcional:");
+    registrarDenuncia(itemNome, motivo, comentario);
+    alert("Sua denúncia foi registrada. Obrigado por ajudar a manter a comunidade segura!");
+  });
+
+  container.appendChild(btn);
+}
+
+// Função que registra a denúncia (no momento apenas console, futuramente pode gerar log ou enviar para servidor)
+function registrarDenuncia(itemNome, motivo, comentario) {
+  const denuncia = {
+    item: itemNome,
+    motivo: motivo,
+    comentario: comentario,
+    data: new Date().toLocaleString()
+  };
+
+  console.log("Denúncia registrada:", denuncia);
+  // Futuro: enviar para servidor ou salvar em log externo
+}div.querySelector(".denunciarBtn").addEventListener("click", ()=>{
 div.innerHTML=`
   <h4>${p.nome} - R$ ${p.preco}</h4>
   <img src="${p.foto}" alt="${p.nome}">
