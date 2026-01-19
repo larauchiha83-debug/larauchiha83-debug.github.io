@@ -1,4 +1,23 @@
-* { margin:0; padding:0; box-sizing:border-box; }
+#simbolosGrupos {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:15px;
+  gap:10px;
+}
+
+.logoGrupo {
+  width:50px;
+  height:50px;
+  border-radius:50%; /* deixa circular */
+  box-shadow:0 3px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.logoGrupo:hover {
+  transform: scale(1.2);
+  box-shadow:0 5px 15px rgba(255,64,129,0.5);
+}* { margin:0; padding:0; box-sizing:border-box; }
 
 body {
   font-family: 'Arial', sans-serif;
