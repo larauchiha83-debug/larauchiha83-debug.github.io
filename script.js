@@ -1,4 +1,58 @@
-function mostrarMensagem(texto) {
+const conteudo = document.getElementById("conteudo");
+
+// Função para resetar a área de conteúdo
+function mostrarHome() {
+  conteudo.innerHTML = "<p>Bem-vindo ao KpopMania! Clique nos botões acima para navegar.</p>";
+}
+
+// Funções para cada seção
+function mostrarCapas() {
+  conteudo.innerHTML = `
+    <h2>Capas</h2>
+    <img src="https://via.placeholder.com/300x150?text=Capa+1" alt="Capa 1">
+    <img src="https://via.placeholder.com/300x150?text=Capa+2" alt="Capa 2">
+  `;
+}
+
+function mostrarReels() {
+  conteudo.innerHTML = `
+    <h2>Reels</h2>
+    <img src="https://via.placeholder.com/300x150?text=Reel+1" alt="Reel 1">
+    <img src="https://via.placeholder.com/300x150?text=Reel+2" alt="Reel 2">
+  `;
+}
+
+function mostrarPerfil() {
+  conteudo.innerHTML = `
+    <h2>Perfil</h2>
+    <img src="https://via.placeholder.com/100x100?text=Avatar" alt="Avatar">
+    <p>Nome: Usuário Kpop</p>
+    <p>Bio: Fanfic e histórias autorais</p>
+  `;
+}
+
+function mostrarChat() {
+  conteudo.innerHTML = `
+    <h2>Chat</h2>
+    <p>Aqui você pode conversar com outros fãs (placeholder)</p>
+  `;
+}
+
+function mostrarStories() {
+  conteudo.innerHTML = `
+    <h2>Stories</h2>
+    <img src="https://via.placeholder.com/200x100?text=Story+1" alt="Story 1">
+    <img src="https://via.placeholder.com/200x100?text=Story+2" alt="Story 2">
+  `;
+}
+
+// Eventos dos botões
+document.getElementById("homeBtn").addEventListener("click", mostrarHome);
+document.getElementById("capasBtn").addEventListener("click", mostrarCapas);
+document.getElementById("reelsBtn").addEventListener("click", mostrarReels);
+document.getElementById("perfilBtn").addEventListener("click", mostrarPerfil);
+document.getElementById("chatBtn").addEventListener("click", mostrarChat);
+document.getElementById("storiesBtn").addEventListener("click", mostrarStories);function mostrarMensagem(texto) {
   const div = document.getElementById("mensagem");
   div.textContent = texto;
 }
