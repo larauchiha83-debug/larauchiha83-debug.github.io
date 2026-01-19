@@ -371,9 +371,9 @@ function mostrarCapas() {
   conteudo.innerHTML = `
     <h2>Capas</h2>
     <div class="grupos">
-      <img src="https://via.placeholder.com/50x50?text=BTS" alt="BTS" class="logoGrupo">https://share.google/JUQEysjy0EYcM14bR
-      <img src="https://via.placeholder.com/50x50?text=TXT" alt="TXT" class="logoGrupo">https://share.google/tmZi38PHYOKpAIGew
-      <img src="https://via.placeholder.com/50x50?text=Seventeen" alt="Seventeen" class="logoGrupo">https://share.google/ou5z39Unefa2E8VrV
+      <img src="https://via.placeholder.com/50x50?text=BTS" alt="BTS" class="logoGrupo"
+      <img src="https://via.placeholder.com/50x50?text=TXT" alt="TXT" class="logoGrupo"
+      <img src="https://via.placeholder.com/50x50?text=Seventeen" alt="Seventeen" class="logoGrupo"
     </div>
     <img src="https://via.placeholder.com/300x150?text=Capa+1" alt="Capa 1">
     <img src="https://via.placeholder.com/300x150?text=Capa+2" alt="Capa 2">
@@ -514,7 +514,7 @@ conteudo.innerHTML += `
 </section>
 `;
 
-document.getElementById("revisarBtn").addEventListener("click", function() {
+documeant.getElementById("revisarBtn").addEventListener("click", function() {
   const input = document.getElementById("inputFanfic").value;
   const saida = document.getElementById("saidaAI");
 
@@ -626,7 +626,7 @@ let savedCovers = [];
 let currentStory = null;
 
 let chapterCount = 0;
-
+a
 let currentChat = null;
 
 let chats = { private: { 'Amigo1': [] }, group: { 'Fandom BTS': [] } };
