@@ -5,6 +5,100 @@ function mostrarHome() {
   conteudo.innerHTML = "<p>Bem-vindo ao KpopMafia! Clique nos botões acima para explorar.</p>";
 }
 
+// --- IA de escrita ---
+function mostrarIA() {
+  conteudo.innerHTML = `
+    <h2>IA de Escrita</h2>
+    <textarea id="inputFanfic" placeholder="Cole sua fanfic ou história aqui..." rows="5"></textarea>
+    <select id="tipoSugestao">
+      <option value="resumo">Resumo</option>
+      <option value="sinopse">Sinopse</option>
+      <option value="ideias">Ideias/Opiniões</option>
+    </select>
+    <button id="revisarBtn">Gerar Sugestão</button>
+    <div id="saidaAI"></div>
+  `;
+
+  document.getElementById("revisarBtn").addEventListener("click", function() {
+    const input = document.getElementById("inputFanfic").value.trim();
+    const tipo = document.getElementById("tipoSugestao").value;
+    const saida = document.getElementById("saidaAI");
+
+    if(input === "") {
+      saida.textContent = "Cole sua história para receber sugestões.";
+      return;
+    }
+
+    let mensagem = "";
+    if(tipo === "resumo") mensagem = "Sugestão de resumo: Tente condensar os eventos principais em 2-3 frases.";
+    if(tipo === "sinopse") mensagem = "Sugestão de sinopse: Crie um gancho atraente que desperte curiosidade.";
+    if(tipo === "ideias") mensagem = "Sugestão de ideias: Você pode explorar conflito, romance ou humor para enriquecer a história.";
+
+    saida.textContent = mensagem;
+  });
+}
+
+// --- Marketplace ---
+let produtos = [];
+
+function mostrarMarketplace() {
+  conteudo.innerHTML = `
+    <h2>Marketplace KpopMafia</h2>
+    <h3>Vender Produto</h3>
+    <input type="text" id="nomeProduto" placeholder="Nome do produto">
+    <input type="text" id="precoProduto" placeholder="Preço">
+    <textarea id="descricaoProduto" placeholder="Descrição do produto"></textarea>
+    <input type="text" id="fotoProduto" placeholder="URL da foto">
+    <input type="text" id="videoProduto" placeholder="URL do vídeo (opcional)">
+    <button id="enviarProduto">Adicionar à Vitrine</button>
+    <h3>Vitrine</h3>
+    <div id="vitrine"></div>
+  `;
+
+  document.getElementById("enviarProduto").addEventListener("click", function() {
+    const nome = document.getElementById("nomeProduto").value.trim();
+    const preco = document.getElementById("precoProduto").value.trim();
+    const desc = document.getElementById("descricaoProduto").value.trim();
+    const foto = document.getElementById("fotoProduto").value.trim();
+    const video = document.getElementById("videoProduto").value.trim();
+
+    if(!nome || !preco || !desc || !foto){
+      alert("Preencha todos os campos obrigatórios!");
+      return;
+    }
+
+    const produto = { nome, preco, desc, foto, video };
+    produtos.push(produto);
+    atualizarVitrine();
+  });
+}
+
+function atualizarVitrine(){
+  const vitrine = document.getElementById("vitrine");
+  vitrine.innerHTML = "";
+  produtos.forEach(p => {
+    const div = document.createElement("div");
+    div.className = "produto";
+    div.innerHTML = `
+      <h4>${p.nome} - R$ ${p.preco}</h4>
+      <img src="${p.foto}" alt="${p.nome}">
+      <p>${p.desc}</p>
+      ${p.video ? `<a href="${p.video}" target="_blank">Ver vídeo</a>` : ""}
+    `;
+    vitrine.appendChild(div);
+  });
+}
+
+// --- Eventos Menu ---
+document.getElementById("homeBtn").addEventListener("click", mostrarHome);
+document.getElementById("aiBtn").addEventListener("click", mostrarIA);
+document.getElementById("marketBtn").addEventListener("click", mostrarMarketplace);const conteudo = document.getElementById("conteudo");
+
+// --- Função Home ---
+function mostrarHome() {
+  conteudo.innerHTML = "<p>Bem-vindo ao KpopMafia! Clique nos botões acima para explorar.</p>";
+}
+
 // --- Seções ---
 function mostrarCapas() {
   conteudo.innerHTML = `
